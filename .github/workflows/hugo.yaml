@@ -51,7 +51,7 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: List contents of /home/runner/work/blog/
         run: |
-          echo "Listing contents of /home/runner/work/blog/:"
+          echo "Listing contents of /home/runner/work/blog/blog/:"
           ls -la /home/runner/work/blog/
       - name: Build with Hugo
         env:
