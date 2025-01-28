@@ -1,0 +1,116 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = "Johnny's nerdy blog"
+theme = 'hugo-theme-stack'
+DefaultContentLanguage = "en"
+hasCJKLanguage = false
+
+[languages]
+[languages.en]
+languageName = "English"
+title = "Johnny's nerdy blog"
+weight = 1
+[languages.en.params]
+sidebar.subtitle = "The nerd with a mouth"
+
+[pagination]
+pagerSize = 5
+
+[permalinks]
+post = "/story/:slug/"
+page = "/:slug/"
+
+[params]
+mainSections = ["post"]
+featuredImageField = "image"
+rssFullContent = true
+favicon = "/favicon.ico"
+
+[params.footer]
+since = 2025
+customText = "Powered by Friendly Nerd"
+
+[params.dateFormat]
+published = "Jan 25, 2025"
+lastUpdated = "Jan 25, 2025 15:31 GMT+1"
+
+[params.sidebar]
+compact = false
+emoji = ""
+subtitle = "The nerd with a mouth"
+[params.sidebar.avatar]
+enabled = true
+local = true
+src = "img/avatar.png"
+
+[params.article]
+math = false
+toc = true
+readingTime = true
+
+[params.comments]
+enabled = false
+
+[params.widgets]
+[[params.widgets.homepage]]
+type = "search"
+[[params.widgets.homepage]]
+type = "archives"
+params.limit = 5
+[[params.widgets.homepage]]
+type = "categories"
+params.limit = 10
+[[params.widgets.homepage]]
+type = "tag-cloud"
+params.limit = 10
+[[params.widgets.page]]
+type = "toc"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.extensions]
+[markup.goldmark.extensions.passthrough]
+enable = true
+[markup.goldmark.extensions.passthrough.delimiters]
+delimiters.block = ["[", "]", "$$", "$$"]
+delimiters.inline = ["(", ")"]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.tableOfContents]
+endLevel = 4
+ordered = true
+startLevel = 2
+[markup.highlight]
+noClasses = false
+codeFences = true
+guessSyntax = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+tabWidth = 4
+
+
+[menu]
+[[menu.social]]
+identifier = "gitlab"
+name = "GitLab"
+url = "https://gitlab.com/Bungo"
+[menu.social.params]
+icon = "brand-gitlab"
+[[menu.social]]
+identifier = "linkedin"
+name = "LinkedIn"
+url = "https://linkedin.com/in/john-guentensperger/"
+[menu.social.params]
+icon = "brand-linkedin"
+
+[related]
+includeNewer = true
+threshold = 60
+toLower = false
+[[related.indices]]
+name = "tags"
+weight = 100
+[[related.indices]]
+name = "categories"
+weight = 200

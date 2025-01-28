@@ -1,0 +1,53 @@
+.icon-tabler-inverse {
+    fill: var(--body-text-color);
+    stroke: none;
+}
+
+$defaultTagBackgrounds: #8ea885, #df7988, #0177b8, #ffb900, #6b69d6;
+$defaultTagColors: #fff, #fff, #fff, #fff, #fff;
+
+/*
+*   Global style
+*/
+:root {
+
+    --body-background: #E1D5FD;
+
+    --accent-color: #383158;
+    --accent-color-darker: #0d0246;
+    --accent-color-text: #fff;
+    --body-text-color: #5e5a71;
+
+    --scrollbar-thumb: hsl(252, 27%, 67%);
+
+    &[data-scheme="dark"] {
+        --body-background: #2E1B5B;
+        --accent-color: #E1D5FD;
+        --accent-color-darker: #a481f8;
+        --accent-color-text: #000;
+        --body-text-color: #a39bb4;
+        --scrollbar-thumb: hsl(259, 15%, 54%);
+    }
+}
+
+/*
+*   Card style
+*/
+:root {
+    --card-background: #fff;
+    --card-background-selected: #a39bb4;
+
+    --card-text-color-main: #2E1B5B;
+    --card-text-color-secondary: #af73ad;
+    --card-text-color-tertiary: #af73ad;
+    --card-separator-color: rgba(147, 124, 196, 0.5);
+
+    &[data-scheme="dark"] {
+        --card-background: #180E32;
+        --card-background-selected: #483e5e;
+        --card-text-color-main: rgba(255, 255, 255, 0.9);
+        --card-text-color-secondary: rgba(255, 255, 255, 0.7);
+        --card-text-color-tertiary: rgba(255, 255, 255, 0.5); 
+        --card-separator-color: rgba(147, 124, 196, 0.3);
+    }
+}
