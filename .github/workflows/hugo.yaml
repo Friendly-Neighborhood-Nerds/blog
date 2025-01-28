@@ -42,8 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
-          fetch-depth: 0
+          submodules: true
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -52,7 +51,7 @@ jobs:
       - name: List contents of /home/runner/work/blog/
         run: |
           echo "Listing contents of /home/runner/work/blog/blog/:"
-          ls -la /home/runner/work/
+          ls -la /home/runner/work/blog/blog/
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
