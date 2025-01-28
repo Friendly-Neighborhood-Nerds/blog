@@ -44,11 +44,21 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: List Submodules Fetched
+        run: |
+          echo "Listing submodules:"
+          git submodule status --recursive
+          echo "Submodule list details:"
+          git submodule foreach 'echo $name - $sm_path'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: List contents of /home/runner/work/blog/
+        run: |
+          echo "Listing contents of /home/runner/work/blog/blog/:"
+          ls -la /home/runner/work/blog/blog/
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
